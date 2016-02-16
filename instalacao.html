@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>MongoDB Resumo by weldermarcosxd</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>MongoDB Resumo</h1>
+        <h2>Resumo do que foi aprendido no curso Be-Mean</h2>
+        <a href="https://github.com/weldermarcosxd/MongoDB-Resumo" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+
+<h2>
+  <a id="teoria" class="anchor" href="#teoria" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Teoria
+</h2>
+
+<p>Iniciando o que foi esplicado pelo curso, passaremos pela breve explicação teórica do que são bancos de dados não relacionais e um pouco das especifícações do nosso querido MongoDB.</p>
+
+<h3>
+<a id="noSql" class="anchor" href="#noSql" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NoSQL</h3>
+
+<p>O termo NoSQL é um termo relativamente novo para uma idéia já antiga dos bancos de dados. Feraamentas de armazenamento não baseadas na estrutura relacional. Contudo tecnologias que fazem parte da classe NoSQL estão longe de serem substitutas do modelo relacional, já tão consolidado no mundo.</p>
+<p>NoSQL referenciam-se tecnologias de armazenamento que não se baseam obrigatóriamente em esquemas de dados predefinidos e possuem capacidade de armazenar estruturas de dados específicas, complementando assim o modelo generalista e estruturado de bancos de dados relacionais</p>
+<p>Existem alguns bancos de dados não relacionais bastante disseminados atualmente pelo seu potêncial de aplicação em problemas específicos. Exitem alguma categorias de bancos, então é necessário realizar uma análise prévia para se descobrir qual categoria de solução melhor atende as necessidades de desenvolvimento. Das categorias principais temos: </p>
+
+<ul>
+  <li>Orientados a chave-valor</li>
+  <li>Orientados a documentos</li>
+  <li>Orientados a grafos</li>
+  <li>Orientados a colunas</li>
+</ul>
+
+<h4>
+  <a id="chave-valor" class="anchor" href="#chave-valor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chave-valor
+</h4>
+
+<p>Baseado na ideia de armazenar cada valor em uma chave, e só necessitar buscar, ordenar e gerenciar estas chaves tornando a busca e recuperação dos dados bastante eficiente, além de possuir uma estrutura bastante simples.</p>
+<p>Mas esta simplicidade tem seu preço. Este tipo de estrutura não permite se trabalhar com os valores internos de um registro mesmo que este seja um objeto complexo e só é possível acessar determinado valor se soubermos previamente a chave daquele registro.</p>
+
+<h4>
+  <a id="documentos" class="anchor" href="#documentos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentos
+</h4>
+
+<p>Semelhante ao modelo de chave valor, mas por outro lado supre a necessidade de análise dos valores intenos dos objetos, considerados como os documentos dessas bases de dados. É necessário se especificar uma estrutura de documentos a serem armazenados, o MongoDB, objeto principal desta página é orientado a documentos json.</p>
+<p>Como desvantagem este modelo apresenta pouca usabilidade em modelos que necessitam de grande cobertura de ligação e dependência dos objetos armazenados por ter o foco no armazenamento completo da informação e para se armazenar vínculos é necessário muitas vezes se armazenas ambos os documentos repetidas vezes.
+</p>
+
+<h4>
+  <a id="grafo" class="anchor" href="#grafo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Grafo
+</h4>
+
+<p>Baco de dados focados em armazenamento de dados que possuam grande dependência entre sí por se basear na teoria de grafos onde os dados seriam o nódulos e o relacionamento destes seriam as suas arestas. Altamente indicados para aplicações onde é necessário o armazenamento dos dados, como em uma rede social.</p>
+<p>Por outro lado a estrutura de grafos se mostra demasiada complexa para modelos onde a informação se encontra em objetos isolados e o relacionamento entre estes é pouco importante. Nestes casos podem ser utilizados os bancos relacionais ou os oientados a documentos</p>
+
+<h4>
+  <a id="colunas" class="anchor" href="#colunas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Colunas
+</h4>
+
+<p>Modelo baseado em colunas assemelha-se ao modelo relacional só que de uma maneira tridimensional por adicionar um tipo a mais de filtro que facilita no gerenciamento de grandes volumes de dados.</p>
+<p>Tornou-se famoso com o projeto Big Table da Google focado em big data para o gerenciamento e escalabilidade de grandes fontes de dados</p>
+
+
+<h3>
+<a id="mongodb" class="anchor" href="#mongodb" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MongoDB</h3>
+
+<p>MongoDB é um sinônimo para gigantesco e o nome vem com o objetivo de trazer a mensagem que a ferramenta passa com o seu poder de escabilidade e alta performance.A aplicação foi desenvolvida em C++ e possui estrutura baseada em documentos json.</p>
+
+
+<h4>
+<a id="escabilidade" class="anchor" href="#escabilidade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Escabilidade</h4>
+
+<p>O MongoDB tem como característica marcante a otimização atravez da escabilidade horizontal, que nada mais é o armazenamento distribuido dos dados em diversos servidores, buscando a dispersão dos dados acima do poder de processamento dos hosts de bancos de dados</p>
+
+<h4>
+<a id="scheemaless" class="anchor" href="#scheemaless" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scheemaless</h4>
+
+<p>Este SGBD possui a característica comum em bancos de dados não relacionais que é a dispensabilidade de estrutura no armazenamento dos dados previamente ao armazenamento. Ao contrario do quese imagina é possível manter a organização dos dados mesmo em ambientes desta maneira por definir a estrutura dos dados direto nas aplicações.</p>
+
+<h4>
+<a id="mapped-files" class="anchor" href="#mapped-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Memory-mapped files</h4>
+
+<p>Esta abordagem deste SGBD utiliza a memória volátil para o armazenamento e gerenciamento dos dados. Isto possibilita uma maior fluência das informações pois os dados persistidos em memória fisica são mais lentos do que os utilizados em memória virtual e neste tipo de abordagem são utilizados apenas quando é realmente necessário. Este paradigma só é eficientemente aplicado graças as cappedcollections</p>
+
+<h4>
+<a id="capped-collections" class="anchor" href="#capped-collections" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Capped Collections</h4>
+
+<p>Capped collections são coleções de tamanho fixo que são alocadas no disco do host da aplicação antes mesmo de qualquer utilização daquele espaço de armazenamento. Por alocar este espaço préviamente o MongoDB pode inserir os dados de forma sequencial com isso aumentando a performance de manipulação dos dados. Ao se extrapolar o espaço de armazenamento de uma capped collection ela passa a sobreescrever o dados mais antigos.</p>
+
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/weldermarcosxd/MongoDB-Resumo/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/weldermarcosxd/MongoDB-Resumo/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/weldermarcosxd/MongoDB-Resumo"></a> is maintained by <a href="https://github.com/weldermarcosxd">weldermarcosxd</a>.</p>
+
+        </aside>
+      </div>
+    </div>
+
+
+  </body>
+</html>
