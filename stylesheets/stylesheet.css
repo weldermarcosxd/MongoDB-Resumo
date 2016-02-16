@@ -524,11 +524,12 @@ a.button {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 23px;
   line-height: 1.2;
-  color: #fff;
+  color: #000;
 }
 a.button small {
   display: block;
   font-size: 11px;
+  color: #000000;
 }
 header a.button {
   position: absolute;
@@ -878,4 +879,3 @@ footer a:hover {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) { }
-
